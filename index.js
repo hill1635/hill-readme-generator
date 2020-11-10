@@ -53,8 +53,15 @@ const questions = () => {
 };
 
 // function to write README file
-function writeToFile(fileName, data) {
-}
+// fileName?
+const writeToFile = (fileName, data) =>
+    `<h3>${data.title}</h3>
+    <p>${data.summary}</p>
+    <p>${data.successes}</p>
+    <p>${data.challenges}</p>
+    <p>${data.improvements}</p>
+    <p>${data.deployedSite}</p>`
+;
 
 // function to initialize program
 const init = async () => {
@@ -72,5 +79,5 @@ const init = async () => {
     }
 };
 
-    // function call to initialize program
-    init();
+// function call to initialize program
+init();
