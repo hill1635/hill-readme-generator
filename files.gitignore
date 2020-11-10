@@ -1,5 +1,0 @@
-$ cat .gitignore
-# Ignores node_modules folder.
-node_modules/*
-# Ignores .DS_store folder.
-.DS_store/*
