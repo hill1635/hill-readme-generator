@@ -65,7 +65,6 @@ const writeToFile = (fileName, data) =>
 
 // function to initialize program
 const init = async () => {
-    console.log("test");
     try {
         const answers = await questions();
 
