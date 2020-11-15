@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const utils = require('utils');
+const util = require('util');
 const generateMarkdown = require('./utils/generateMarkdown');
 //Utils not defined?  Look up writeFileAsync
-const writeFileAsync = utils.promisify(fs.writeFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // array of questions for user
 const questions = () => {
