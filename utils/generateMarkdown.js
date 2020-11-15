@@ -1,11 +1,12 @@
 // function to generate markdown for README
-function generateMarkdown(data) {
-  return `<h3>${data.title}</h3>
-  <p>${data.summary}</p>
-  <p>${data.successes}</p>
-  <p>${data.challenges}</p>
-  <p>${data.improvements}</p>
-  <p>${data.deployedSite}</p>`;
-}
+const generateMarkdown = (answer) =>
+  `
+  <h1>${answer.title}</h1>
+  <p>${answer.summary}</p>
+  <p>${answer.successes}</p>
+  <p>${answer.challenges}</p>
+  <p>${answer.improvements}</p>
+  <p>${answer.deployedSite}</p>
+  `;
 
 module.exports = generateMarkdown;
