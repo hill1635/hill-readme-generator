@@ -3,9 +3,7 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 var content = '';
 
-// array of questions for user
 const questions = () =>
-    //return removed before inquirer
     inquirer.prompt([
         {
             type: 'input',
@@ -14,44 +12,26 @@ const questions = () =>
         },
         {
             type: 'input',
-            name: 'summary',
-            message: 'What was the required assignment?',
+            name: 'paragraph1',
+            message: 'Paragraph 1: ',
         },
         {
             type: 'input',
-            name: 'successes',
-            message: 'What were your successes?',
+            name: 'paragraph2',
+            message: 'Paragraph 2: ',
         },
         {
             type: 'input',
-            name: 'challenges',
-            message: 'What challenges did you face?',
-        },
-        {
-            type: 'input',
-            name: 'improvements',
-            message: 'What could be added or improved upon?',
+            name: 'paragraph3',
+            message: 'Paragraph 3: ',
         },
         {
             type: 'input',
             name: 'deployedSite',
             message: 'What is the link to the deployed site?',
         },
-        //Add question for screenshots?
-        //Need if statement for Y/N question to repeat until user selects no.
-        //  {
-        //  type: 'yes/no',
-        //  name: 'screenshotCheck',
-        //  message: 'Do you have any additional screenshots?',
-        //  },
-        //  {
-        //  type: 'input',
-        //  name: 'screenshotInput',
-        //  message: 'Please enter image info here:',
-        //  },
     ]);
 
-// function to write README file
 function writeToFile(fileName, content) {
     fileName = 'readme.md';
     console.log(content);
@@ -60,7 +40,6 @@ function writeToFile(fileName, content) {
     );
 };
 
-// function to initialize program
 function init() {
     questions()
     .then((answer) => {
@@ -71,5 +50,4 @@ function init() {
     });
 }
 
-// function call to initialize program
 init();

@@ -2,11 +2,10 @@
 const generateMarkdown = (answer) =>
   `
   <h1>${answer.title}</h1>
-  <p>${answer.summary}</p>
-  <p>${answer.successes}</p>
-  <p>${answer.challenges}</p>
-  <p>${answer.improvements}</p>
-  <p>${answer.deployedSite}</p>
+  <p>${answer.paragraph1}</p>
+  <p>${answer.paragraph2}</p>
+  <p>${answer.paragraph3}</p>
+  <p>Check it out <a href="${answer.deployedSite}">here</a>.</p>
   `;
 
 module.exports = generateMarkdown;
