@@ -79,7 +79,13 @@ const link = () =>
       name: "deployedSite",
       message: "What is the link to the deployed site?",
     },
-  ]);
+  ])
+  .then((answer) => {
+      var content = generateMarkdown(title, sections, pictures, answer.deployedSite);
+      console.log(content);
+      fileName = "readme.md";
+      writeToFile(fileName, content);
+  });
 
 function writeToFile(fileName, content) {
   fileName = "readme.md";
@@ -89,14 +95,4 @@ function writeToFile(fileName, content) {
   );
 }
 
-function init() {
-  start();
-  //   .then(() => {
-  //     var content = generateMarkdown(title, sections, pictures, deployedLink);
-  //     console.log(content);
-  //     fileName = "readme.md";
-  //     writeToFile(fileName, content);
-  //   });
-}
-
-init();
+start();
