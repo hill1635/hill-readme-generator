@@ -14,6 +14,11 @@ const generateMarkdown = (github, title, sections, pictures, deployedSite) =>
     ${section.content}
     `
   ).join("\n  ")}
+
+  ## Screenshots
+  ${pictures.map((picture) =>
+    `${picture}`
+  ).join("\n  ")}
   `;
 
 module.exports = generateMarkdown;
