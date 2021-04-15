@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
+var github = "";
 var title = "";
 var sections = [];
 var pictures = [];
@@ -11,12 +12,18 @@ const start = () =>
     .prompt([
       {
         type: "input",
+        name: "github",
+        message: "What is the link to your github repo?",
+      },
+      {
+        type: "input",
         name: "title",
         message: "What is the title of your project?",
       },
     ])
     .then((answer) => {
       title = answer.title;
+      repo = answer.github;
       section();
     });
 
@@ -73,19 +80,20 @@ const screenshots = () =>
     });
 
 const link = () =>
-  inquirer.prompt([
-    {
-      type: "input",
-      name: "deployedSite",
-      message: "What is the link to the deployed site?",
-    },
-  ])
-  .then((answer) => {
-      var content = generateMarkdown(title, sections, pictures, answer.deployedSite);
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "deployedSite",
+        message: "What is the link to the deployed site?",
+      },
+    ])
+    .then((answer) => {
+      var content = generateMarkdown(github, title, sections, pictures, answer.deployedSite);
       console.log(content);
       fileName = "readme.md";
       writeToFile(fileName, content);
-  });
+    });
 
 function writeToFile(fileName, content) {
   fileName = "readme.md";
