@@ -1,8 +1,8 @@
 
   # README Generator
   [![Deployed](https://img.shields.io/static/v1?label=deployed&message=click%20here&color=success)](https://www.youtube.com/watch?v=RIhJDQYRpAc)
-  [![GitHub last commit](https://img.shields.io/github/last-commit/hill1635/hill-readme-generator?color=success)](github.com/hill1635/hill-readme-generator/commits/main)
-  [![GitHub followers](https://img.shields.io/github/followers/hill1635?color=success&label=Follow&logo=GitHub)](github.com/hill1635)
+  [![GitHub last commit](https://img.shields.io/github/last-commit/hill1635/hill-readme-generator?color=success)](https://github.com/hill1635/hill-readme-generator/commits/main)
+  [![GitHub followers](https://img.shields.io/github/followers/hill1635?color=success&label=Follow&logo=GitHub)](https://github.com/hill1635)
   
   ## Table of Contents
    * [Purpose](hill1635#Purpose)
