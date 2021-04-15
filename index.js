@@ -26,20 +26,32 @@ const section = () =>
       {
         type: "input",
         name: "section",
-        message: "Enter section title, or type NEXT to continue: ",
-      },
-      {
-        type: "input",
-        name: "content",
-        message: "Tell me about the section",
+        message: "Enter section title, or type next to continue: ",
       },
     ])
     .then((answer) => {
-        sections.push({
-            title: answer.section,
-            content: answer.content,
-        });
-      screenshots();
+      if (answer.section == "next") {
+        screenshots();
+      } else {
+        content(answer.section);
+      }
+    });
+
+const content = (title) =>
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "content",
+        message: "Tell me about the section: ",
+      },
+    ])
+    .then((answer) => {
+      sections.push({
+        title: title,
+        content: answer.content,
+      });
+      section();
     });
 
 const screenshots = () =>
@@ -73,12 +85,13 @@ function writeToFile(fileName, content) {
 }
 
 function init() {
-  start().then(() => {
-    var content = generateMarkdown(title, sections, pictures, deployedLink);
-    console.log(content);
-    fileName = "readme.md";
-    writeToFile(fileName, content);
-  });
+  start();
+  //   .then(() => {
+  //     var content = generateMarkdown(title, sections, pictures, deployedLink);
+  //     console.log(content);
+  //     fileName = "readme.md";
+  //     writeToFile(fileName, content);
+  //   });
 }
 
 init();
