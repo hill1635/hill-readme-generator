@@ -2,6 +2,7 @@
 const generateMarkdown = (github, title, sections, pictures, deployedSite) =>
   `
   # ${title}
+  ![Deployed](https://img.shields.io/static/v1?label=deployed&message=click_here&color=green&url=${deployedSite})
   
   ## Table of Contents
   ${sections.map((section) => 
