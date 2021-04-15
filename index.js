@@ -23,7 +23,7 @@ const start = () =>
     ])
     .then((answer) => {
       title = answer.title;
-      repo = answer.github;
+      github = answer.github;
       section();
     });
 

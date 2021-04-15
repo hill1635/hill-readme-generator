@@ -1,11 +1,11 @@
 // function to generate markdown for README
-const generateMarkdown = (title, sections, pictures, deployedSite) =>
+const generateMarkdown = (github, title, sections, pictures, deployedSite) =>
   `
   # ${title}
   
   ## Table of Contents
   ${sections.map((section) => 
-    ` * ${section.title}`
+    ` * [${section.title}](${github}#${section.title.replace(" ", "-")})`
   ).join("\n  ")}
 
   ${sections.map((section) => 
