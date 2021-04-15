@@ -29,8 +29,8 @@ const start = () =>
     ])
     .then((answer) => {
       title = answer.title;
-      github = "github.com/" + answer.github;
-      repo = github + "/" + answer.repo;
+      github = answer.github;
+      repo = answer.repo;
       section();
     });
 
