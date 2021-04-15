@@ -68,9 +68,8 @@ function writeToFile(fileName, content) {
 }
 
 function init() {
-  questions().then((answer) => {
+  start().then(() => {
     var content = generateMarkdown(title, sections, pictures, deployedLink);
-    console.log("content: ", content);
     fileName = "readme.md";
     writeToFile(fileName, content);
   });
