@@ -16,6 +16,7 @@ const start = () =>
       },
     ])
     .then((answer) => {
+      title = answer.title;
       section();
     });
 
@@ -24,7 +25,7 @@ const section = () =>
     .prompt([
       {
         type: "input",
-        name: "toc",
+        name: "section",
         message: "Enter section title, or type NEXT to continue: ",
       },
       {
@@ -34,6 +35,10 @@ const section = () =>
       },
     ])
     .then((answer) => {
+        sections.push({
+            title: answer.section,
+            content: answer.content,
+        });
       screenshots();
     });
 
@@ -70,6 +75,7 @@ function writeToFile(fileName, content) {
 function init() {
   start().then(() => {
     var content = generateMarkdown(title, sections, pictures, deployedLink);
+    console.log(content);
     fileName = "readme.md";
     writeToFile(fileName, content);
   });
