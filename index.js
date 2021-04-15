@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 var github = "";
+var repo = "";
 var title = "";
 var sections = [];
 var pictures = [];
@@ -13,7 +14,12 @@ const start = () =>
       {
         type: "input",
         name: "github",
-        message: "What is the link to your github repo?",
+        message: "What is your GitHub username?",
+      },
+      {
+          type: "input",
+          name: "repo",
+          message: "What is the name of your repo?"
       },
       {
         type: "input",
@@ -23,7 +29,8 @@ const start = () =>
     ])
     .then((answer) => {
       title = answer.title;
-      github = answer.github;
+      github = "github.com/" + answer.github;
+      repo = github + "/" + answer.repo;
       section();
     });
 
@@ -89,7 +96,7 @@ const link = () =>
       },
     ])
     .then((answer) => {
-      var content = generateMarkdown(github, title, sections, pictures, answer.deployedSite);
+      var content = generateMarkdown(github, repo, title, sections, pictures, answer.deployedSite);
       console.log(content);
       fileName = "readme.md";
       writeToFile(fileName, content);

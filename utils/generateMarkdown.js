@@ -1,9 +1,10 @@
 // function to generate markdown for README
-const generateMarkdown = (github, title, sections, pictures, deployedSite) =>
+const generateMarkdown = (github, repo, title, sections, pictures, deployedSite) =>
   `
   # ${title}
   [![Deployed](https://img.shields.io/static/v1?label=deployed&message=click%20here&color=success)](${deployedSite})
-  [![GitHub last commit](https://img.shields.io/github/last-commit/hill1635/${github}?color=success)](${github}/commits/main)
+  [![GitHub last commit](https://img.shields.io/github/last-commit/hill1635/${repo}?color=success)](${repo}/commits/main)
+  [![GitHub followers](https://img.shields.io/github/followers/hill1635?color=success&label=Follow&logo=GitHub)](${github})
   
   ## Table of Contents
   ${sections.map((section) => 
