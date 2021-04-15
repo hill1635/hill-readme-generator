@@ -64,7 +64,12 @@ const screenshots = () =>
       },
     ])
     .then((answer) => {
-      link();
+      if (answer.screenshots == "next") {
+        link();
+      } else {
+        pictures.push(answer.screenshots);
+        screenshots();
+      }
     });
 
 const link = () =>
