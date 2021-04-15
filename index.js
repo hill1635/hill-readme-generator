@@ -8,22 +8,22 @@ const questions = () =>
         {
             type: 'input',
             name: 'title',
-            message: 'What is the title of your readme?',
+            message: 'What is the title of your project?',
         },
         {
             type: 'input',
-            name: 'paragraph1',
-            message: 'Paragraph 1: ',
+            name: 'toc',
+            message: 'Enter section title, or type NEXT to continue: ',
         },
         {
             type: 'input',
-            name: 'paragraph2',
-            message: 'Paragraph 2: ',
+            name: 'content',
+            message: 'Tell me about the section',
         },
         {
             type: 'input',
-            name: 'paragraph3',
-            message: 'Paragraph 3: ',
+            name: 'screenshots',
+            message: 'Add screenshot elements here, or type NEXT to continue: ',
         },
         {
             type: 'input',
