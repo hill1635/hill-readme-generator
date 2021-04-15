@@ -2,7 +2,7 @@
 const generateMarkdown = (github, title, sections, pictures, deployedSite) =>
   `
   # ${title}
-  ![Deployed](https://img.shields.io/static/v1?label=deployed&message=click_here&color=green&url=${deployedSite})
+  [![Deployed](https://img.shields.io/static/v1?label=deployed&message=click_here&color=green)](${deployedSite})
   
   ## Table of Contents
   ${sections.map((section) => 
@@ -14,7 +14,6 @@ const generateMarkdown = (github, title, sections, pictures, deployedSite) =>
     ${section.content}
     `
   ).join("\n  ")}
-
-<p>Check it out <a href="${deployedSite}">here</a>.</p>`;
+  `;
 
 module.exports = generateMarkdown;
