@@ -2,7 +2,8 @@
 const generateMarkdown = (github, title, sections, pictures, deployedSite) =>
   `
   # ${title}
-  [![Deployed](https://img.shields.io/static/v1?label=deployed&message=click_here&color=green)](${deployedSite})
+  [![Deployed](https://img.shields.io/static/v1?label=deployed&message=click%20here&color=success)](${deployedSite})
+  ![GitHub last commit](https://img.shields.io/github/last-commit/hill1635/${github}?color=success)
   
   ## Table of Contents
   ${sections.map((section) => 
